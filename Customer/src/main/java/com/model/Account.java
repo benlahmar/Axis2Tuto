@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Account {
@@ -15,6 +16,9 @@ public class Account {
 	
 	@ManyToOne
 	Profile profile;
+	
+	@OneToOne()
+	Gamer gamer;
 
 	public int getId() {
 		return id;
@@ -54,6 +58,14 @@ public class Account {
 
 	public void setProfile(Profile profile) {
 		this.profile = profile;
+	}
+
+	public Gamer getGamer() {
+		return gamer;
+	}
+
+	public void setGamer(Gamer gamer) {
+		this.gamer = gamer;
 	}
 	
 	
